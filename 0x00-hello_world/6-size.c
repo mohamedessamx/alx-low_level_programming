@@ -1,11 +1,8 @@
 #include <stdio.h>
 
 /**
- * maim - Entry point
- * 
- * Description: using sizeof to print the size of various types.
- *
- * Return: Always 0 (success)
+ * main - prints the size of various types
+ * Return: 0 if exited properly, non-zero otherwise
  */
 
 int main(void)
