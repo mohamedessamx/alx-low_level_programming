@@ -1,23 +1,20 @@
-include <stdio.h>
+#include <stdio.h>
 
 /**
  * main - Entry point
- *
  * Description: print all possible different
- * 		combinations of two digit.
- *
+ *		combinations of two digit.
  * Return: Always 0 (success)
  */
-
 int main(void)
-{       
-        int x = 0, y;
+{
+	int x = 0, y;
 
 	while (x <= 9)
 	{
 		y = 0;
 		while (y <= 9)
-			{
+		{
 				if (x != y && x < y)
 				{
 					putchar(x + 48);
@@ -30,10 +27,10 @@ int main(void)
 					}
 				}
 				y++;
-			}
+		}
 		x++;
 	}
 	putchar('\n');
 
-        return (0);
-}   
+	return (0);
+}
