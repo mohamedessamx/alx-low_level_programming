@@ -1,11 +1,12 @@
 include <stdio.h>
 
 /**
- * main - entrypoint
+ * main - Entry point
  *
- * Description: 
+ * Description: print all possible different
+ * 		combinations of two digit.
  *
- * Return: always 0 (success)
+ * Return: Always 0 (success)
  */
 
 int main(void)
@@ -21,10 +22,11 @@ int main(void)
 				{
 					putchar(x + 48);
 					putchar(y + 48);
+
 					if (x + y != 17)
 					{
 						putchar(',');
-						putcar(' ');
+						putchar(' ');
 					}
 				}
 				y++;
