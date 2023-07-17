@@ -15,18 +15,18 @@ int main(void)
 		y = 0;
 		while (y <= 9)
 		{
-				if (x != y && x < y)
-				{
-					putchar(x + 48);
-					putchar(y + 48);
+			if (x != y && x < y)
+			{
+				putchar(x + 48);
+				putchar(y + 48);
 
-					if (x + y != 17)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+				if (x + y != 17)
+				{
+					putchar(',');
+					putchar(' ');
 				}
-				y++;
+			}
+			y++;
 		}
 		x++;
 	}
@@ -34,3 +34,4 @@ int main(void)
 
 	return (0);
 }
+
