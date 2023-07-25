@@ -10,9 +10,9 @@ void _puts(char *str)
 {
 	while (*str != '\0')
 	{
-		printf(*str = 0);
-		str++;
+		_putchar(*str = 0);
+		*str++;
 	}
 
-	printf('\n');
+	_putchar('\n');
 }
