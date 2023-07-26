@@ -3,7 +3,7 @@
  * _strncpy - function that copies a string.
  * @dest: pointer to destination string input
  * @src: pointer to source input
- * @n: gg
+ * @n: bytes of @src
  * Return: @dest
  */
 
