@@ -36,19 +36,19 @@ int isDelimiter(char c)
 char *cap_string(char *str)
 {
 	char *ptr = s;
-	int foundDelimit = 1;
+	int f = 1;
 
 	while (*s)
 	{
 		if (isDelimiter(*s))
-			foundDelimit = 1;
-		else if (islower(*s) && foundDelimit)
+			f = 1;
+		else if (islower(*s) && f)
 		{
 			*s -= 32;
-			foundDelimit = 0;
+			f = 0;
 		}
 		else
-			foundDelimit = 0;
+			f = 0;
 		s++;
 	}
 	return (ptr);
