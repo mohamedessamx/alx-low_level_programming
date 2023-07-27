@@ -19,7 +19,7 @@ int islower(char c)
 int isDelimiter(char c)
 {
 	int i;
-	char delimiter[13] = "'\t','\n',',','.','!','?','\','"','(',')','{','}',' '";
+	char delimiter[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 
 	for (i = 0; i <= 13; i++)
 	{
