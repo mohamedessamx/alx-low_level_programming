@@ -11,6 +11,7 @@ char *_strstr(char *haystack, char *needle)
 
 	haystack_len = strlen(haystack);
 	needle_len = strlen(needle);
+
 	if (needle_len > haystack_len)
 	{
 		return (NULL);

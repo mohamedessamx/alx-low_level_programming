@@ -7,23 +7,16 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
-	char *p;
-
-	i = 0;
-	while (s[i] != '\0')
+	int s_len = strlen(s);
+	int accept_len = strlen(accept);
+	
+	for (int i = 0; i < s_len; i++)
 	{
-		j = 0;
-		while (accept[j] != '\0')
+		for (int j = 0; j < accept_len; j++)
 		{
-			if (accept[j] == s[i])
-			{
-				p = &s[i];
-				return (p);
-			}
-			j++;
+			if (s[i] == accept[j])
+				return &s[i];
 		}
-		i++
 	}
-	return (0);
+	return (NULL);
 }
