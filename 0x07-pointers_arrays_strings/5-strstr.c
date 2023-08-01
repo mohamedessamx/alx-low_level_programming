@@ -7,9 +7,10 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int haystack_len = strlen(haystack);
-	int needle_len = strlen(needle);
+	int haystack_len, needle_len;
 
+	haystack_len = strlen(haystack);
+	needle_len = strlen(needle);
 	if (needle_len > haystack_len)
 	{
 		return (NULL);
