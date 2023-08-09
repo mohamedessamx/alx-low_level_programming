@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * strlen - find length of string
+ * _strlen - find length of string
  * @s: string
  * Return: type
  */
-int strlen(char *s)
+int _strlen(char *s)
 {
 	int size = 0;
 
@@ -27,7 +27,7 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	for (; i < ac; i++; nc++)
-		nc += strlen(av[i]);
+		nc += _strlen(av[i]);
 	s = malloc(sizeof(char) * nc + 1);
 	if (s == 0)
 		return (NULL);
