@@ -7,6 +7,7 @@
 void _puts(char *str)
 {
 	int i = 0;
+
 	while (str[i])
 	{
 		_putchar(str[i]);
@@ -51,7 +52,7 @@ void print_int(unsigned long int n)
 	{
 		resp = n / divisor;
 		_putchar('0' + resp
-	}	
+	}
 }
 /**
  * main - multiplies two positive numbers.
@@ -59,7 +60,7 @@ void print_int(unsigned long int n)
  * @argv: list
  * Return: 0
  */
-int main(int argc, char const *avgv[])
+int main(int argc, char const *argv[])
 {
 	(void)argc;
 
