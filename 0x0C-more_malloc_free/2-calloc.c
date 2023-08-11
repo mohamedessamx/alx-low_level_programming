@@ -23,5 +23,6 @@ for (; i < nmemb; i++)
 {
 	ptr[i] = 0;
 }
+ptr[i] = '\0';
 return (ptr);
 }
