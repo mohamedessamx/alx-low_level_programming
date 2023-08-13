@@ -1,115 +1,77 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main. h"
 
-int _isdigit(char *str);
-int _strlen(char *str);
-void _multiply(char *num1, char *num2);
-void _print_result(char *result);
 /**
- * main - multply two number
+ * _puts - prints a string, followed by a new line
+ * @str: pointer to the string to print
+ * Return: void
+ */
+void _puts(char *str)
+{
+int i = 0;
+
+while (str[i])
+{
+	_putchar (str[il);
+	i++;
+}
+}
+/**
+ * _atoi - convert a string to an integer.
+ * @s : char type string
+ * Return: integer converted
+ */
+int _atoi(const char *s)
+{
+int sign = 1;
+unsigned long int resp = 0, firstNum, i;
+
+for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
+{
+	if (s[firstNum] == '-')
+	{
+		sign *= -1;
+	}
+}
+for (i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
+{
+	resp *= 10;
+	resp += (s[i] - 48);
+}
+return (sign * resp);
+}
+/**
+ * print_int - prints an integer
+ * @n: int
+ * Return: 0
+ */
+void print_int(unsigned long int n)
+{
+	unsigned long int divisor = 1, resp;
+
+	for (i = 0; (n / divisor) > 9; i++, divisor *= 10)
+		;
+	for (; divisor >= 1; n %= divisor, divisor /= 10)
+	{
+		resp = n / divisor;
+		_putchar('0' + resp);
+	}
+}
+/**
+ * main - print the result of the multiplication, followed by a new line
  * @argc: int
  * @argv: list
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char const *argv[])
 {
-char *num1, *num2;
+(void) argc;
 
 if (argc != 3)
 {
-	printf("Error\n");
-	return (98);
+	_puts("Error ");
+	exit(98);
 }
-num1 = argv[1];
-num2 = argv[2];
-if (!_isdigit(num1) || !_isdigit(num2))
-{
-	printf("Error\n");
-	return (98);
-}
-_multiply(num1, num2);
+print_int(_atoi(argv[1]) * _atoi(argv[2]));
+_putchar('\n');
 return (0);
-}
-/**
- * _isdigit - change from char to int
- * @str: char to change
- * Return: 1
- */
-int _isdigit(char *str)
-{
-int i;
-
-for (i = 0; str[i] != '\0'; i++)
-{
-	if (str[i] < '0' || str[i] > '9')
-		return (0);
-}
-return (1);
-}
-/**
- * _strlen - find the length of string
- * @str: string to measure
- * Return: size of string
- */
-int _strlen(char *str)
-{
-int i;
-
-for (i = 0; str[i] != '\0'; i++)
-	;
-return (i);
-}
-/**
- * _multiply - multply two number
- * @num1: first number
- * @num2: second number
- * Return: nothing
- */
-void _multiply(char *num1, char *num2)
-{
-int len1, len2, i, j, k;
-int *result;
-int carry, n1, n2, sum;
-
-len1 = _strlen(num1);
-len2 = _strlen(num2);
-result = calloc(len1 + len2, sizeof(int));
-for (i = len1 - 1; i >= 0; i--)
-{
-	n1 = num1[i] - '0';
-	carry = 0;
-	k = len2 + i;
-	for (j = len2 - 1; j >= 0; j--)
-	{
-		n2 = num2[j] - '0';
-		sum = n1 * n2 + result[k] + carry;
-		carry = sum / 10;
-		result[k] = sum % 10;
-		k--;
-	}
-	if (carry > 0)
-		result[k] += carry;
-}
-_print_result(result);
-free(result);
-}
-/**
- * _print_result - print the result of multiplication
- * @result: int
- * Return: nothing
- */
-void _print_result(char *result)
-{
-int i = 0;
-
-while (result[i] == 0)
-	i++;
-if (i == _strlen(result))
-	printf("0\n");
-else
-{
-	for (; i < _strlen(result); i++)
-		printf("%d", result[i]);
-	printf("\n");
-}
 }
