@@ -5,7 +5,12 @@ int _isdigit(char *str);
 int _strlen(char *str);
 void _multiply(char *num1, char *num2);
 void _print_result(char *result);
-
+/**
+ * main - multply two number
+ * @argc: int
+ * @argv: list
+ * Return: 0
+ */
 int main(int argc, char *argv[])
 {
 char *num1, *num2;
@@ -13,19 +18,23 @@ char *num1, *num2;
 if (argc != 3)
 {
 	printf("Error\n");
-	return 98;
+	return (98);
 }
 num1 = argv[1];
 num2 = argv[2];
 if (!_isdigit(num1) || !_isdigit(num2))
 {
 	printf("Error\n");
-	return 98;
+	return (98);
 }
 _multiply(num1, num2);
-return 0;
+return (0);
 }
-
+/**
+ * _isdigit - change from char to int
+ * @str: char to change
+ * Return: 1
+ */
 int _isdigit(char *str)
 {
 int i;
@@ -33,20 +42,29 @@ int i;
 for (i = 0; str[i] != '\0'; i++)
 {
 	if (str[i] < '0' || str[i] > '9')
-		return 0;
+		return (0);
 }
-return 1;
+return (1);
 }
-
+/**
+ * _strlen - find the length of string
+ * @str: string to measure
+ * Return: size of string
+ */
 int _strlen(char *str)
 {
 int i;
 
 for (i = 0; str[i] != '\0'; i++)
 	;
-return i;
+return (i);
 }
-
+/**
+ * _multiply - multply two number
+ * @num1: first number
+ * @num2: second number
+ * Return: nothing
+ */
 void _multiply(char *num1, char *num2)
 {
 int len1, len2, i, j, k;
@@ -75,7 +93,11 @@ for (i = len1 - 1; i >= 0; i--)
 _print_result(result);
 free(result);
 }
-
+/**
+ * _print_result - print the result of multiplication
+ * @result: int
+ * Return: nothing
+ */
 void _print_result(char *result)
 {
 int i = 0;
