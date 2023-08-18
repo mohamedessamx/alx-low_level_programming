@@ -17,21 +17,21 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (1);
 	}
-	 bytes = atoi(argv[1]);
-	 if (bytes < 0)
-	 {
-		 printf("Error\n");
-		 return (2);
-	 }
-	 unsigned char *p = (unsigned char *)main;
+	bytes = atoi(argv[1]);
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		return (2);
+	}
+	unsigned char *p = (unsigned char *)main;
 
-	 for (i = 0; i < bytes; i++)
-	 {
-		 printf("%02x", *(p + i));
-		 if (i == bytes - 1)
-			 printf("\n");
-		 else
-			 printf(" ");
-	 }
-	 return (0);
+	for (i = 0; i < bytes; i++)
+	{
+		printf("%02x", *(p + i));
+		if (i == bytes - 1)
+			printf("\n");
+		else
+			printf(" ");
+	}
+	return (0);
 }
