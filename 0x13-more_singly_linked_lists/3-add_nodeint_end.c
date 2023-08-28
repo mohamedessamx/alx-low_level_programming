@@ -12,9 +12,10 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 
 	if (!head || !newnode)
 		return (NULL);
+
 	newnode->next = NULL;
 	newnode->n = n;
-	if (!head)
+	if (!*head)
 		*head = newnode;
 	else
 	{
